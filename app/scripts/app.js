@@ -75,16 +75,16 @@ var AddGame = Backbone.View.extend({
     //set alert or error message - since multiple could be true, move game look up first, over writes message if you voted or its the weekend
     // message for game already in collection
     if( !!gameCollection.findWhere({title: newGame}) ) {
-      message = 'This game is already on the ballot or owned, vote for it or add a new game.'
-    };
+      message = 'This game is already on the ballot or owned, vote for it or add a new game.';
+    }
     // message for trying to vote more than once a week
     if( $.cookie('voted') === currentDate ) {
-      message = 'You already voted or added a game today! Try again tomorrow.'
-    };
+      message = 'You already voted or added a game today! Try again tomorrow.';
+    }
     // message for voting on the weekend
     if( $.cookie('dayOfWeek') === '6' || $.cookie('dayOfWeek') === '0' ) {
-      message = 'You cannot vote on the weekend! Go outside and play!'
-    };
+      message = 'You cannot vote on the weekend! Go outside and play!';
+    }
 
 
     //check cookies to make sure it isn't Sat/Sun and user hasn't voted already yet
@@ -128,7 +128,7 @@ var AddGame = Backbone.View.extend({
     }
 
     //clear the input's text
-    this.$el.find('input').val('')
+    this.$el.find('input').val('');
     //stop form from trying to submit
     e.preventDefault();
   }
@@ -205,12 +205,12 @@ var VoteButton = Backbone.View.extend({
     // set alert or error message
     // message for trying to vote more than once a week
     if( $.cookie('voted') === currentDate ) {
-      message = 'You already voted today! Try again tomorrow.'
-    };
+      message = 'You already voted today! Try again tomorrow.';
+    }
     // message for voting on the weekend
     if( $.cookie('dayOfWeek') === '6' || $.cookie('dayOfWeek') === '0' ) {
-      message = 'You cannot vote on the weekend! Go outside and play!'
-    };
+      message = 'You cannot vote on the weekend! Go outside and play!';
+    }
 
 
     //allow vote as long as it is not sunday or saturday and user hasn't voted yet
@@ -288,8 +288,8 @@ var fetchGames = function(){
       ownCollection.set( gameCollection.where({status: 'gotit'}) );
 
       //sort collection
-      wantCollection.sort()
-      ownCollection.sort()
+      wantCollection.sort();
+      ownCollection.sort();
 
       //create views for these games
       wantCollection.createGameView(wantCollection.models);
@@ -325,7 +325,7 @@ var removeMessage = function() {
   setTimeout(function(){
     $messageWrap.removeClass('show');
     $message.text(' ');
-  }, 5000)
+  }, 5000);
 };
 
 //using jQuery Cookie plugin (https://github.com/carhartl/jquery-cookie)
@@ -339,7 +339,7 @@ Backbone.history.start();
 
 // instantiate collections
 var gameCollection = new GameCollection(),
-    wantCollection = new WantCollection()
+    wantCollection = new WantCollection(),
     ownCollection = new OwnCollection();
 
 // fetch initial game data from server
