@@ -15,12 +15,12 @@ var VoteButton = Backbone.View.extend({
     // set alert or error message
     // message for trying to vote more than once a week
     if( $.cookie('voted') === currentDate ) {
-      message = 'You already voted today! Try again tomorrow.'
-    };
+      message = 'You already voted today! Try again tomorrow.';
+    }
     // message for voting on the weekend
     if( $.cookie('dayOfWeek') === '6' || $.cookie('dayOfWeek') === '0' ) {
-      message = 'You cannot vote on the weekend! Go outside and play!'
-    };
+      message = 'You cannot vote on the weekend! Go outside and play!';
+    }
 
 
     //allow vote as long as it is not sunday or saturday and user hasn't voted yet

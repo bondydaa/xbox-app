@@ -13,8 +13,8 @@ var fetchGames = function(){
       ownCollection.set( gameCollection.where({status: 'gotit'}) );
 
       //sort collection
-      wantCollection.sort()
-      ownCollection.sort()
+      wantCollection.sort();
+      ownCollection.sort();
 
       //create views for these games
       wantCollection.createGameView(wantCollection.models);
@@ -50,7 +50,7 @@ var removeMessage = function() {
   setTimeout(function(){
     $messageWrap.removeClass('show');
     $message.text(' ');
-  }, 5000)
+  }, 5000);
 };
 
 //using jQuery Cookie plugin (https://github.com/carhartl/jquery-cookie)
@@ -64,7 +64,7 @@ Backbone.history.start();
 
 // instantiate collections
 var gameCollection = new GameCollection(),
-    wantCollection = new WantCollection()
+    wantCollection = new WantCollection(),
     ownCollection = new OwnCollection();
 
 // fetch initial game data from server
