@@ -10,29 +10,9 @@ module.exports = function (grunt) {
         files: ['src/styles/*.scss'],
         tasks: ['compass:dist']
       },
-      assemble: {
-        files: ['src/{,*/}*.hbs'],
-        tasks: ['assemble:dist']
-      },
       concat: {
-        files: ['src/scripts/*.js'],
+        files: ['src/js/{,*/}*.js'],
         tasks: ['concat:dist']
-      }
-    },
-
-    assemble: {
-      options: {
-        partials: ['src/_includes/*.hbs'],
-        layoutdir: 'src/_layouts/',
-        layout: ['default.hbs'],
-        data: ['src/_data/**/*.{json,yml}'],
-        postprocess: require('pretty')
-      },
-      dist: {
-        expand: true,
-        cwd: 'src/',
-        src: ['*.hbs'],
-        dest: 'app'
       }
     },
 
@@ -40,11 +20,12 @@ module.exports = function (grunt) {
     compass: {
       options: {
         sassDir: 'src/styles/',
-        cssDir: 'app/css',
+        cssDir: 'app/css/',
         relativeAssets: false,
         assetCacheBuster: false,
         outputStyle: 'expanded',
-        noLineComments: false
+        noLineComments: false,
+        require: 'susy'
       },
       dist: {
         options: {
@@ -56,11 +37,11 @@ module.exports = function (grunt) {
     concat: {
       options: {
         separator: grunt.util.linefeed + grunt.util.linefeed,
-        banner: '(function () {' + grunt.util.linefeed + grunt.util.linefeed,
+        banner: '(function() {' + grunt.util.linefeed + grunt.util.linefeed,
         footer: grunt.util.linefeed + grunt.util.linefeed + '})();'
       },
       dist: {
-        src: 'src/scripts/*.js',
+        src: ['src/js/models/*.js', 'src/js/collections/*.js', 'src/js/views/*.js', 'src/js/router/*.js', 'src/js/init.js'],
         dest: 'app/scripts/app.js',
       },
     }
@@ -73,7 +54,7 @@ module.exports = function (grunt) {
 
   // Default task.
   grunt.registerTask('default', [
-    'assemble:dist',
+    'concat:dist',
     'compass:dist'
   ]);
 

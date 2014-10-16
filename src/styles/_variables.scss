@@ -1,0 +1,17 @@
+// clearfix placeholder extend
+%clearfix {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+// Colors
+
+$dark-purple: #6867ba;
+$purple: #7574c7;
+$kermit-green: #8fd788;
+$moss-green: #8bd9a7;
+$turquoise-ish: #8edbcc;
+
+
+// Mixins

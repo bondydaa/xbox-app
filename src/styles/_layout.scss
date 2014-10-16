@@ -1,0 +1,45 @@
+// define susy grid parameters
+$susy: (
+  // Tells Susy to use 12 columns
+  columns: 12,
+  // Tells Susy to use border-box
+  global-box-sizing: border-box
+);
+
+// set font on HTML to cascade
+html {
+  padding-top: 30px;
+  font-family: "Roboto" sans-serif;
+  background: $purple;
+  font-size: 14px;
+}
+
+// Makes border-box properties
+@include border-box-sizing;
+
+// defining layout/grid
+#app {
+  @include container(1200px);
+  width: 100%;
+  min-width: 320px;
+}
+// mobile first, 100%
+.ballot {
+  @include span(12);
+}
+.library {
+  @include span(12);
+}
+// split into 2 columns
+@media (min-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+  .ballot {
+    @include span(6);
+  }
+  .library {
+    @include span(6 last);
+  }
+}
+

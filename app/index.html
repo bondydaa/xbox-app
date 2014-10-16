@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Xbox Game Ballot</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link href="/css/xbox-app.css" rel="stylesheet">
+  <!-- HTML5 SHIV for IE8 -->
+  <!--[if lt IE 9]>
+  <script src="/scripts/vendor/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body id="app">
+  <section class="messages">
+    <p class="message"></p>
+  </section>
+
+  <h1 class="app-header">The Nerdery Xbox Game Library</h1>
+
+  <form id="add-game-form" class="game-form">
+    <label for="add-game-input">Add a Game</label>
+    <input type="text" class="add-game" id="add-game-input" placeholder="eg. Super Mario Kart">
+  </form>
+
+  <section class="ballot">
+    <h2 class="ballot-header">Wanted Games</h2>
+    <ol class="ballot-list"></ol>
+  </section>
+
+  <section class="library">
+    <h2 class="library-header">Owned Library</h2>
+    <ol class="library-list"></ol>
+  </section>
+  <!-- vendor scripts -->
+  <script src="/scripts/vendor/jquery-1.11.1.min.js"></script>
+  <script src="/scripts/vendor/jquery.cookie.js"></script>
+  <script src="/scripts/vendor/underscore-min.js"></script>
+  <script src="/scripts/vendor/backbone-min.js"></script>
+
+  <!-- main app script -->
+  <script src="/scripts/app.js"></script>
+
+</body>
+</html>

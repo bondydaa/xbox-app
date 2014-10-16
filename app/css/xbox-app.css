@@ -1,0 +1,230 @@
+.game:after, .messages:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+html {
+  padding-top: 30px;
+  font-family: "Roboto" sans-serif;
+  background: #7574c7;
+  font-size: 14px;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#app {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-width: 320px;
+}
+#app:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.ballot {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.library {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+
+  .ballot {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .library {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+  }
+}
+.app-header {
+  margin-bottom: 15px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.game-form {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.add-game {
+  vertical-align: middle;
+}
+
+.ballot-header,
+.library-header {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.game {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 5px;
+  background: #8fd788;
+}
+
+.vote-btn,
+.num-votes,
+.game-title {
+  float: left;
+  margin-right: 10px;
+}
+
+.own-btn {
+  float: right;
+}
+
+.own-btn,
+.vote-btn {
+  cursor: pointer;
+}
+
+.own-btn {
+  border: none;
+  background: none;
+  color: #558151;
+}
+.own-btn:hover {
+  color: #72ac6c;
+}
+
+.vote-btn {
+  border-radius: 5px;
+  border: 1px solid #6867ba;
+  border-bottom: 3px solid #7574c7;
+  background: #8edbcc;
+  color: #6867ba;
+}
+.vote-btn:hover {
+  color: #72ac6c;
+}
+.vote-btn:active {
+  border: 1px solid #8fd788;
+  border-top: 3px solid #8fd788;
+  border-bottom: 1px solid transparent;
+}
+
+.num-votes {
+  text-align: center;
+}
+.num-votes:before {
+  content: "Votes";
+  display: block;
+  font-size: .675em;
+}
+
+.messages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: #8edbcc;
+  box-shadow: 0px 0px 10px 0px gray;
+  -moz-transition: height 0.5s linear;
+  -o-transition: height 0.5s linear;
+  -webkit-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+}
+.messages.show {
+  height: 50px;
+}
+
+.message {
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0;
+  text-align: center;
+  color: #63998e;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+.show .message {
+  opacity: 1;
+}

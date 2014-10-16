@@ -1,0 +1,31 @@
+// alert & error messages
+.messages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: $turquoise-ish;
+  box-shadow: 0px 0px 10px 0px gray;
+  @include transition(height .5s linear);
+
+  &.show {
+    height: 50px;
+  }
+  &:after {
+    @extend %clearfix;
+  }
+}
+
+.message {
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0;
+  text-align: center;
+  color: shade($turquoise-ish, 30%);
+  @include transition(opacity .5s linear);
+
+  .show & {
+    opacity: 1;
+  }
+}

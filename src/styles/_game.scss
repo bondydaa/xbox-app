@@ -1,0 +1,71 @@
+.ballot-header,
+.library-header {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+// keep games in list at 100% of container
+.game {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 5px;
+  background: $kermit-green;
+  // keep floats cleared
+  &:after {
+    @extend %clearfix;
+  }
+}
+// float li children
+.vote-btn,
+.num-votes,
+.game-title {
+  float: left;
+  margin-right: 10px;
+}
+.own-btn {
+  float: right;
+}
+
+// buttton styles
+.own-btn,
+.vote-btn {
+  cursor: pointer;
+}
+
+.own-btn {
+  border: none;
+  background: none;
+  color: shade($kermit-green, 40%);
+
+  &:hover {
+    color: shade($kermit-green, 20%);
+  }
+}
+.vote-btn {
+  border-radius: 5px;
+  border: 1px solid $dark-purple;
+  border-bottom: 3px solid $purple;
+  background: $turquoise-ish;
+  color: $dark-purple;
+
+  &:hover {
+    color: shade($kermit-green, 20%);
+  }
+  &:active {
+    border: 1px solid $kermit-green;
+    border-top: 3px solid $kermit-green;
+    border-bottom: 1px solid transparent;
+  }
+}
+
+
+// game text styles
+.num-votes {
+  text-align: center;
+  &:before {
+    content: "Votes";
+    display: block;
+    font-size: .675em;
+  }
+}
